@@ -13,6 +13,6 @@ namespace Recruitment
 
         public override decimal TotalWeight => Ingredients.Sum(i => i.Quantity);
 
-        public decimal CookLoss => throw new NotImplementedException();
+        public decimal CookLoss => (TotalWeight - CookedWeight) / TotalWeight * 100;
     }
 }
