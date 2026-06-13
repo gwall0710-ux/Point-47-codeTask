@@ -46,5 +46,11 @@ namespace Recruitment
         /// the recipe should only contain "Fish" once.
         /// </summary>
         IEnumerable<Allergen> Allergens { get; }
+
+        /// <summary>
+        /// A comma-delimited list of the ingredients in the descending order of their quantity.
+        /// Ingredients with allergens have them listed in parentheses after the ingredient name.
+        /// </summary>
+        string IngredientsDeclaration { get; }
     }
 }
