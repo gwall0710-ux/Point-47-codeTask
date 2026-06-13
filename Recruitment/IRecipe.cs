@@ -37,5 +37,14 @@ namespace Recruitment
         ///  The value should be returned as a percentage of the total weight, and should be whole number and not a fractional decimal. e.g. 100 instead of 1.
         /// </summary>
         decimal CookLoss { get; }
+
+        /// <summary>
+        /// The list of allergens that are present in the recipe. 
+        /// This should be a distinct list of allergens that are present in the 
+        /// ingredients of the recipe. For example, if the recipe has 3 ingredients, 
+        /// and 2 of them have the allergen "Fish", then the list of allergens for 
+        /// the recipe should only contain "Fish" once.
+        /// </summary>
+        IEnumerable<Allergen> Allergens { get; }
     }
 }
