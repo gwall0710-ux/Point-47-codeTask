@@ -36,7 +36,7 @@ namespace Recruitment
         ///  - If the total weight of the recipe is 200g and the cooked weight is 150g, then the cook loss is 25%.
         ///  The value should be returned as a percentage of the total weight, and should be whole number and not a fractional decimal. e.g. 100 instead of 1.
         /// </summary>
-        decimal CookLoss { get; }
+        int CookLoss { get; }
 
         /// <summary>
         /// The list of allergens that are present in the recipe. 

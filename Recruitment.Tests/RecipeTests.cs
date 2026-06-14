@@ -30,6 +30,32 @@ namespace Recruitment.Tests
             recipe.CookedWeight = cookedWeight;
             return recipe.CookLoss;
         }
-    }
 
+        [Test]
+        public void Recipe_ShouldCorrectlyCalculateTotalWeight()
+        {
+            Recipe recipe = RecipeTestData.GetPancakeRecipe();
+
+            Assert.That(recipe.TotalWeight, Is.EqualTo(200));
+        }
+
+        [Test]
+        public void Recipe_ShouldCorrectlyReturnAllergens()
+        {
+            Recipe recipe = RecipeTestData.GetPancakeRecipe();
+            var allergens = recipe.Allergens.ToList();
+
+            Assert.That(allergens.Count, Is.EqualTo(2));
+            Assert.That(allergens, Does.Contain(Allergen.Egg));
+            Assert.That(allergens, Does.Contain(Allergen.Milk));
+        }
+
+        [Test]
+        public void Recipe_ShouldCorrectlyReturnIngredientsDeclaration()
+        {
+            Recipe recipe = RecipeTestData.GetPancakeRecipe();
+            string expectedDeclaration = "Flour, Milk (Milk), Eggs (Egg)";
+            Assert.That(recipe.IngredientsDeclaration, Is.EqualTo(expectedDeclaration));
+        }
+    }
 }

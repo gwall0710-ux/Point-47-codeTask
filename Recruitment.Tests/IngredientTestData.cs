@@ -55,12 +55,18 @@ namespace Recruitment.Tests
 
         public static Ingredient GetEggsIngredient(decimal quantity)
         {
-            return new Ingredient("I08", "Eggs", quantity);
+            return new Ingredient("I08", "Eggs", quantity)
+            {
+                Allergens = new List<Allergen> { Allergen.Egg }
+            };
         }
 
         public static Ingredient GetMilkIngredient(decimal quantity)
         {
-            return new Ingredient("I09", "Milk", quantity);
+            return new Ingredient("I09", "Milk", quantity)
+            {
+                Allergens = new List<Allergen> { Allergen.Milk }
+            };
         }
     }
 }
